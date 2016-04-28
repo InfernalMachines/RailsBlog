@@ -21,8 +21,15 @@ class PostsController < ApplicationController
 		redirect_to :back
 		end
 	end
+	def show
+		@user = current_user.posts.find(params[:postid])
+		@title = @user.post_title
+		@body = @user.post_body
+
+
+	end
 	def edit
-		
+
 	end
 
 	private

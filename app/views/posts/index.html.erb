@@ -1,0 +1,13 @@
+<h1>index My Posts</h1>
+<% if session[:user_id] %>
+<h1><%= current_user.email %></h1>
+<% end %>
+
+<%= puts @post %>
+
+<% @user.each do |item| %>
+<h2><%= item.post_title %></h2>
+<h3><%= item.post_body %></h3>
+	<% end %>
+
+	<%= link_to "Create Post", :controller => :posts, :action => :new %>

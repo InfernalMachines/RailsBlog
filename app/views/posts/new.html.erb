@@ -1,0 +1,16 @@
+<h1>Create Post</h1>
+<% if session[:user_id] %>
+<h1><%= current_user.email %></h1>
+<% end %>
+
+<!-- form for creating posts -->
+<p>
+<%=form_for Post.new do |f| %>
+	<%= f.hidden_field :user_id, :value => session[:user_id] %>
+	<%=f.label :post_title %>
+	<%=f.text_field :post_title %>
+	<%=f.label :post_body %>
+	<%=f.text_area :post_body %>
+	<%=f.submit "Submit Post" %>
+<%end%>
+</p>

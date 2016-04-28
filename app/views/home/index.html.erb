@@ -1,0 +1,18 @@
+<h1>Welcome to my Website</h1>
+<% if session[:user_id] %>
+<h1><%= current_user.email %></h1>
+<% end %>
+
+<br />
+<% if session[:user_id] %>
+	<%= link_to "Log Out", :controller => :sessions, :action => :destroy %>	
+<% else %>
+	<%= link_to "Log In", "/log-in" %>
+	<br />
+	<%= link_to "Create New User", "/users/new" %>
+<% end %>
+
+<br />
+
+
+
